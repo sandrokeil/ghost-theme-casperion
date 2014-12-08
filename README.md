@@ -80,8 +80,11 @@ The original Casper Theme CSS has split in several SASS files.
 
 ### TODO
 :white_medium_square: Use more configuration variables
+
 :white_medium_square: Use more SASS variables
+
 :white_medium_square: Optimize own added CSS
+
 :white_medium_square: Optimize own added JS
 
 ## Copyright & License
