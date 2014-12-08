@@ -1,0 +1,268 @@
+/* ==========================================================================
+   11. Media Queries - Smaller than 500px
+   ========================================================================== */
+
+@media only screen and (max-width: 500px) {
+
+  .main-header {
+    margin-bottom: 15px;
+    height: 40%;
+  }
+
+  .no-cover.main-header {
+    height: 30%;
+  }
+
+  .archive-template .main-header {
+    max-height: 20%;
+    min-height: 160px;
+    padding: 10% 0;
+  }
+
+  .main-nav {
+    padding: 0;
+    margin-bottom: 2rem;
+    border-bottom: #e0e4e7 1px solid;
+  }
+
+  .blog-logo {
+    padding: 10px 10px;
+  }
+
+  .blog-logo img {
+    height: 26px;
+  }
+
+  .back-button,
+  .subscribe-button {
+    height: 44px;
+    line-height: 41px;
+    border-radius: 0;
+    color: #2e2e2e;
+    background: transparent;
+  }
+  .back-button:hover,
+  .subscribe-button:hover {
+    border-color: #ebeef0;
+    color: #2e2e2e;
+    background: #ebeef0;
+  }
+
+  .back-button {
+    padding: 0 15px 0 10px;
+  }
+
+  .subscribe-button {
+    padding: 0 12px;
+  }
+
+  .main-nav.overlay a:hover {
+    color: #fff;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .no-cover .main-nav.overlay {
+    background: none;
+  }
+  .no-cover .main-nav.overlay .back-button,
+  .no-cover .main-nav.overlay .subscribe-button {
+    border: none;
+  }
+
+  .main-nav.overlay .back-button,
+  .main-nav.overlay .subscribe-button {
+    border-color: transparent;
+  }
+
+  .blog-logo img {
+    max-height: 80px;
+  }
+
+  .inner,
+  .pagination {
+    width: auto;
+    margin: 2rem auto;
+  }
+
+  .post {
+    width: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 2rem;
+    line-height: 1.65em;
+  }
+
+  .post-date {
+    display: none;
+  }
+
+  .post-template .post-header {
+    margin-bottom: 2rem;
+  }
+
+  .post-template .post-date {
+    display: inline-block;
+  }
+
+  hr {
+    margin: 1.75em 0;
+  }
+
+  p, ul, ol, dl {
+    font-size: 0.95em;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .post-excerpt p {
+    font-size: 0.85em;
+  }
+
+  .page-description {
+    font-size: 1.6rem;
+  }
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    margin: 0 0 0.3em 0;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0;
+  }
+
+  h3 {
+    font-size: 2.1rem;
+  }
+
+  h4 {
+    font-size: 1.9rem;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+
+  h6 {
+    font-size: 1.8rem;
+  }
+
+  body:not(.post-template) .post-title {
+    font-size: 2.5rem;
+  }
+
+  .post-template .post {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .post-template .site-footer {
+    margin-top: 0;
+  }
+
+  .post-content img {
+    padding: 0;
+  }
+
+  .post-content .full-img {
+    width: auto;
+    width: calc(100% + 32px); /* expand with to image + margins */
+    margin: 0 -16px; /* get rid of margins */
+    min-width: 0;
+    max-width: 112%; /* fallback when calc doesn't work */
+  }
+
+  .post-meta {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+
+  .post-footer {
+    padding: 5rem 0 3rem 0;
+    text-align: center;
+  }
+
+  .post-footer .author {
+    margin: 0 0 2rem 0;
+    padding: 0 0 1.6rem 0;
+    border-bottom: #EBF2F6 1px dashed;
+  }
+
+  .post-footer .share {
+    position: static;
+    width: auto;
+  }
+
+  .post-footer .share a {
+    margin: 1.4rem 0.8rem 0 0.8rem;
+  }
+
+  .author-meta li {
+    float: none;
+    margin: 0;
+    line-height: 1.75em;
+  }
+
+  .author-meta li:before {
+    display: none;
+  }
+
+  .older-posts,
+  .newer-posts {
+    position: static;
+    margin: 10px 0;
+  }
+
+  .page-number {
+    display: block;
+  }
+
+  .site-footer {
+    margin-top: 3rem;
+  }
+
+  .author-profile {
+    padding-bottom: 2rem;
+  }
+
+  .post-head.main-header {
+    height: 30%;
+  }
+
+  .tag-head.main-header,
+  .author-head.main-header {
+    height: 20%;
+  }
+
+  .author-profile .author-image {
+    margin-top: -70px;
+  }
+
+  .author-profile .author-meta span {
+    font-size: 1.4rem;
+  }
+
+  .archive-template .main-header .page-description {
+    display: none;
+  }
+
+  .nav-container {
+    width: 100%;
+  }
+
+  .nav .list-inline > li {
+    margin: 0.25em 0em;
+  }
+}

@@ -1,0 +1,124 @@
+//*-----------------------------------------
+//* Search
+//*-----------------------------------------
+
+.search-padding {
+  padding-left: 5px;
+}
+
+.search {
+  position: relative;
+  width: 0%;
+  min-width: 30px;
+  height: 32px;
+  float: right;
+  text-align: left;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  transition: width 0.3s;
+  -webkit-backface-visibility: hidden;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: #fff;
+  width: 93%;
+  height: 23px;
+  line-height: 23px;
+  padding:0;
+  margin: 0;
+  z-index: 10;
+  font-family: inherit;
+  color: #2c3e50;
+}
+
+.icon-search-button  {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background: #575757;
+  z-index: 90;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+/* Open state */
+.search.search-open,
+.no-js .search {
+  width: 85%;
+}
+
+.search.search-open .icon-search-button,
+.no-js .search .icon-search-button {
+  background: #575757;
+  color: #fff;
+  z-index: 11;
+}
+
+.search.search-open,
+.no-js .search {
+  z-index: 90;
+}
+
+/*
+#search {
+  //position: relative;
+  .search-input {
+    color: $navbar-default-color;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0.2rem auto;
+    box-shadow: none;
+  }
+}
+*/
+.search-clear-toggle {
+  color: #D94439;
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-top: 1px;
+  padding: 15px;
+}
+.search-results {
+  background: none repeat scroll 0 0 #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  color: #686868;
+  margin-top: 40px;
+  opacity: 0;
+//  padding: 15px;
+  text-align: left;
+  visibility: hidden;
+  z-index: 101;
+  &.search-active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.search-results-amount {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  display: block;
+  font-size: 1rem;
+  font-weight: 200;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding: 15px;
+}
+.search-results-title {
+  display: block;
+  padding: 10px 15px;
+}
