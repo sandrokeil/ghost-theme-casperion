@@ -12,8 +12,7 @@
 
 > Minified css and js
 
-**Casperion** is a free Ghost theme powered by SASS. The theme is based upon original Ghost theme [Casper](https://github.com/TryGhost/Casper)
-with some minor modifications and extensions.
+**Casperion** is a free Ghost theme powered by SASS. The theme is based upon original Ghost theme [Casper](https://github.com/TryGhost/Casper) with some minor modifications and extensions.
 
 ## [Casperion Demo](http://blog.sandro-keil.de/)
 
@@ -67,16 +66,16 @@ a code block was detected in blog post.
 Casperion theme package and all its related files.
 
 ## Development
-Don't make any changes in assets folder. Only use src folder and use `gulp watch` to automatically update assets on changes.
+Don't make any changes in `assets` folder. Only use `src` folder and use `gulp watch` to automatically update assets on changes.
 
 ### Change to your needs
 Please have a look at the following files to configure this theme to your needs.
 
-* default.hbs
-* files under partials/all
+* `default.hbs`
+* files under `partials/all`
 
 ### SASS files
-The original Casper Theme CSS has split in several SASS files.
+The original Casper theme CSS has split in several SASS files.
 
 ### TODO
 :white_medium_square: Use more configuration variables
