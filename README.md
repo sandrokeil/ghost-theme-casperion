@@ -17,7 +17,7 @@
 ## [Casperion Demo](http://blog.sandro-keil.de/)
 
 Casperion is a lightweight and speed optimized theme for Ghost. Casperion theme gets Grade A for both PageSpeed and
-YSlow reported by [GTmetrix](http://gtmetrix.com/reports/blog.sandro-keil.de/o98VUD7).
+YSlow reported by [GTmetrix](http://gtmetrix.com/reports/blog.sandro-keil.de/saOUEB43).
 
 [![Grade A](docs/casperion_gtmetrix.jpg)](http://blog.sandro-keil.de/ "Blog by Sandro Keil")
 
