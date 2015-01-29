@@ -26,7 +26,7 @@ YSlow reported by [GTmetrix](http://gtmetrix.com/reports/blog.sandro-keil.de/saO
 **Casperion** theme is packaged with full powerful features so you can get started building your blog easily.
 It's planned to update this theme consistently depending on Casper theme changes.
 
-### Full Ghost 0.5.6 support
+### Full Ghost 0.5.8 support
 Casperion supports latest Ghost version.
 
 ### Top pinned navigation bar and off-canvas menu
@@ -88,7 +88,7 @@ The original Casper theme CSS has split in several SASS files.
 
 ## Copyright & License
 
-Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
+Copyright (c) 2013-2015 Ghost Foundation - Released under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
