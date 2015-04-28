@@ -1,23 +1,31 @@
 {
   "name": "Casperion",
-  "version": "1.1.0",
-  "description": "Free Ghost Theme",
+  "version": "1.2.0",
+  "description": "Casperion is a free Ghost theme powered by SASS. Casperion is based upon original Ghost theme Casper with some minor modifications and extensions.",
   "license": "MIT",
+  "homepage": "https://github.com/sandrokeil/ghost-theme-casperion",
+  "keywords": [
+    "ghost",
+    "blog",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sandrokeil/ghost-theme-casperion.git"
+  },
   "devDependencies": {
-    "del": "^1.1.0",
-    "event-stream": "~3.1",
-    "gulp": "^3.8.9",
+    "gulp": "^3.8.11",
+    "gulp-cache": "^0.2.8",
+    "gulp-changed": "^1.2.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.10.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-minify-html": "^1.0.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
     "gulp-autoprefixer": "^2.0.0",
-    "gulp-cache": "^0.2.4",
-    "gulp-concat": "^2.4.2",
-    "gulp-imagemin": "^2.0.0",
-    "gulp-jshint": "^1.9.0",
-    "gulp-livereload": "^2.1.1",
-    "gulp-minify-css": "^0.3.11",
-    "gulp-notify": "^2.0.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-ruby-sass": "^0.7.1",
-    "gulp-uglify": "^1.0.2",
-    "notify-send": "^0.1.2"
+    "gulp-sass": "^1.3.3"
   }
 }

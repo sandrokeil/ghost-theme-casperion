@@ -1,5 +1,5 @@
 /* ==========================================================================
-   7. Third Party Elements - Embeds from other services
+   8. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -7,9 +7,11 @@
   margin: 0;
   font-size: 1.4rem;
 }
+.gist td {
+  line-height: 1.4;
+}
 .gist .line-number {
   min-width: 25px;
-  font-size: 1.1rem;
 }
 
 /* Pastebin */

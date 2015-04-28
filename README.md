@@ -14,19 +14,19 @@
 
 **Casperion** is a free Ghost theme powered by SASS. The theme is based upon original Ghost theme [Casper](https://github.com/TryGhost/Casper) with some minor modifications and extensions.
 
-## [Casperion Demo](http://blog.sandro-keil.de/)
+## [Casperion Demo](https://sandro-keil.de/blog/)
 
 Casperion is a lightweight and speed optimized theme for Ghost. Casperion theme gets Grade A for both PageSpeed and
-YSlow reported by [GTmetrix](http://gtmetrix.com/reports/blog.sandro-keil.de/saOUEB43).
+YSlow reported by [GTmetrix](http://gtmetrix.com).
 
-[![Grade A](docs/casperion_gtmetrix.jpg)](http://blog.sandro-keil.de/ "Blog by Sandro Keil")
+[![Grade A](docs/casperion_gtmetrix.jpg)](https://sandro-keil.de/blog/ "Blog by Sandro Keil")
 
 ## Full Features
 
 **Casperion** theme is packaged with full powerful features so you can get started building your blog easily.
 It's planned to update this theme consistently depending on Casper theme changes.
 
-### Full Ghost 0.5.8 support
+### Full Ghost 0.6 support
 Casperion supports latest Ghost version.
 
 ### Top pinned navigation bar and off-canvas menu
@@ -72,6 +72,7 @@ Don't make any changes in `assets` folder. Only use `src` folder and use `gulp w
 Please have a look at the following files to configure this theme to your needs.
 
 * `default.hbs`
+* `navigation.hbs`
 * files under `partials/all`
 
 ### SASS files

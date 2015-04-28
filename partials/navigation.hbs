@@ -5,15 +5,11 @@
         </button>
         <div class="nav-container">
             <ul class="nav-menu menu">
-                <li class="menu-item">
-                    <a href="{{@blog.url}}" class="menu-link">Home</a>
+                {{#foreach navigation}}
+                <li class="menu-item" role="presentation">
+                    <a href="{{url absolute="true"}}" class="menu-link{{#if current}} nav-current{{/if}}" title="Go to {{label}}">{{label}}</a>
                 </li>
-                <li class="menu-item">
-                    <a href="{{@blog.url}}/privacy" class="menu-link">Privacy</a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{@blog.url}}/imprint" class="menu-link">Imprint</a>
-                </li>
+                {{/foreach}}
             </ul>
         </div>
         <ul class="list-inline">

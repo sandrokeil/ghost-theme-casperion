@@ -1,59 +1,52 @@
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
 
   .main-header {
     margin-bottom: 15px;
-    height: 40%;
+    height: 40vh;
   }
 
   .no-cover.main-header {
-    height: 30%;
+    height: 30vh;
   }
 
   .archive-template .main-header {
-    max-height: 20%;
+    max-height: 20vh;
     min-height: 160px;
     padding: 10% 0;
   }
 
   .main-nav {
-    padding: 0;
+    padding: 5px;
     margin-bottom: 2rem;
-    border-bottom: #e0e4e7 1px solid;
   }
 
   .blog-logo {
-    padding: 10px 10px;
+    padding: 5px;
   }
 
   .blog-logo img {
-    height: 26px;
+    height: 30px;
   }
 
-  .back-button,
-  .subscribe-button {
-    height: 44px;
-    line-height: 41px;
+  .menu-button {
+    padding: 0 5px;
     border-radius: 0;
+    border-color: transparent;
     color: #2e2e2e;
     background: transparent;
   }
-  .back-button:hover,
-  .subscribe-button:hover {
-    border-color: #ebeef0;
+  .menu-button:hover {
     color: #2e2e2e;
-    background: #ebeef0;
+    border-color: transparent;
+    background: none;
   }
-
-  .back-button {
-    padding: 0 15px 0 10px;
-  }
-
-  .subscribe-button {
-    padding: 0 12px;
+  body.nav-opened .menu-button {
+    background: none;
+    border: transparent;
   }
 
   .main-nav.overlay a:hover {
@@ -65,18 +58,26 @@
   .no-cover .main-nav.overlay {
     background: none;
   }
-  .no-cover .main-nav.overlay .back-button,
-  .no-cover .main-nav.overlay .subscribe-button {
+  .no-cover .main-nav.overlay .menu-button {
     border: none;
   }
 
-  .main-nav.overlay .back-button,
-  .main-nav.overlay .subscribe-button {
+  .main-nav.overlay .menu-button {
     border-color: transparent;
   }
 
-  .blog-logo img {
-    max-height: 80px;
+  .nav-title {
+    top: 25px;
+
+  }
+
+  .nav-close {
+    position: absolute;
+    top: 18px;
+  }
+
+  .nav ul {
+    padding: 60px 9% 5%;
   }
 
   .inner,
@@ -163,23 +164,13 @@
     font-size: 2.5rem;
   }
 
-  .post-template .post {
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-
   .post-template .site-footer {
     margin-top: 0;
   }
 
   .post-content img {
     padding: 0;
-  }
-
-  .post-content .full-img {
-    width: auto;
     width: calc(100% + 32px); /* expand with to image + margins */
-    margin: 0 -16px; /* get rid of margins */
     min-width: 0;
     max-width: 112%; /* fallback when calc doesn't work */
   }
@@ -238,12 +229,12 @@
   }
 
   .post-head.main-header {
-    height: 30%;
+    height: 30vh;
   }
 
   .tag-head.main-header,
   .author-head.main-header {
-    height: 20%;
+    height: 20vh;
   }
 
   .author-profile .author-image {
@@ -258,6 +249,17 @@
     display: none;
   }
 
+  .read-next {
+    margin-top: 2rem;
+    margin-bottom: -37px;
+  }
+
+  .read-next .post {
+    width: 100%;
+  }
+
+
+  /* own changes */
   .nav-container {
     width: 100%;
   }

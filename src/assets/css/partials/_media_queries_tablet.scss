@@ -1,12 +1,8 @@
 /* ==========================================================================
-   10. Media Queries - Smaller than 900px
+   11. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
-
-  .main-nav {
-    padding: 15px;
-  }
 
   blockquote {
     margin-left: 0;
@@ -18,7 +14,7 @@
     box-sizing: border-box;
     height: auto;
     min-height: 240px;
-    height: 60%;
+    height: 60vh;
     padding: 15% 0;
   }
 
@@ -102,12 +98,12 @@
   }
 
   .post-head.main-header {
-    height:45%;
+    height:45vh;
   }
 
   .tag-head.main-header,
   .author-head.main-header {
-    height: 30%;
+    height: 30vh;
   }
 
   .no-cover.post-head.main-header {
@@ -117,6 +113,24 @@
 
   .no-cover.author-head.main-header {
     padding: 0;
+  }
+
+  .read-next {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .read-next p {
+    display: none;
+  }
+
+  .read-next-story.no-cover + .read-next-story.no-cover {
+    border-top: rgba(0,0,100,0.06) 1px solid;
+    border-left: none;
   }
 
   .nav-container {

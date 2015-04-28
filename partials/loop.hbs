@@ -5,21 +5,19 @@
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="26"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        {{author}}
-        {{tags prefix=" on "}}
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <a class="post-comment" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}">0 Comments</a>
-    </footer>
-</article>
+    <article class="{{post_class}}">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{{url}}" title="Read more about {{{title}}}">{{{title}}}</a></h2>
+        </header>
+        <p class="post-excerpt">{{excerpt words="65"}} <a class="read-more" href="{{url}}" title="Read more about {{{title}}}">&raquo; ...</a></p>
+        <footer class="post-meta">
+            {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image"/>{{/if}}
+            {{author}}
+            {{tags prefix=" on "}}
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <a class="post-comment" href="{{url}}#disqus_thread" data-disqus-identifier="{{id}}" title="Comments for {{{title}}}">0 Comments</a>
+        </footer>
+    </article>
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}

@@ -7,7 +7,7 @@
   position: relative;
   display: table;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin-bottom: 5rem;
   text-align: center;
   background: #222 no-repeat center center;
@@ -46,6 +46,7 @@
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
   -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
   -webkit-animation: bounce 4s 2s infinite;
   animation: bounce 4s 2s infinite;
@@ -88,8 +89,8 @@
 .blog-logo {
   display: block;
   float: left;
-  background: none !important;
-  border: none !important;
+  background: none !important; /* Makes sure there is never a background */
+  border: none !important; /* Makes sure there is never a border */
 }
 
 .blog-logo img {
@@ -284,8 +285,7 @@
   margin: 4rem auto;
   padding-bottom: 4rem;
   border-bottom: #EBF2F6 1px solid;
-  word-break: break-word;
-  hyphens: auto;
+  word-wrap: break-word;
 }
 
 /* Add a little circle in the middle of the border-bottom on our .post
@@ -301,8 +301,6 @@
   left: 50%;
   margin-left: -5px;
   background: #FFF;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
   border-radius: 100%;
   box-shadow: #FFF 0 0 0 5px;
 }
@@ -315,7 +313,8 @@ body:not(.post-template) .post-title {
   text-decoration: none;
 }
 
-.post-excerpt p {
+/* removed section tag, so it must be used without p */
+.post-excerpt {
   margin: 0;
   font-size: 0.9em;
   line-height: 1.7em;

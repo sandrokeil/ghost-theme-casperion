@@ -1,6 +1,6 @@
 // Load Gulp Plugins
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
@@ -52,7 +52,7 @@ gulp.task('images', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'images');
+    gulp.start('styles', 'scripts');
 });
 
 // Watch
