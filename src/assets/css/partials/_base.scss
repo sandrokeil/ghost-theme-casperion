@@ -20,6 +20,7 @@ body {
   -webkit-font-feature-settings: 'kern' 1;
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1;
+  text-rendering: geometricPrecision;
 }
 
 ::-moz-selection {
@@ -39,6 +40,7 @@ h4, h5, h6 {
   line-height: 1.15em;
   margin: 0 0 0.4em 0;
   font-family: "Open Sans", sans-serif;
+  text-rendering: geometricPrecision;
 }
 
 h1 {
@@ -70,7 +72,7 @@ h6 {
 
 a {
   color: $link_color;
-  transition: color ease 0.3s;
+  transition: color 0.3s ease;
   text-decoration: none;
 }
 
@@ -83,6 +85,7 @@ p, ul, ol, dl {
   -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
   margin: 0 0 1.75em 0;
+  text-rendering: geometricPrecision;
 }
 
 ol, ul {
@@ -162,7 +165,7 @@ blockquote cite a {
 }
 
 mark {
-  background-color: #FFC336;
+  background-color: #fdffb6;
 }
 
 code, tt {
@@ -190,9 +193,8 @@ pre {
   border-radius: 3px;
 }
 
-pre code, tt {
+pre code, pre tt {
   font-size: inherit;
-  white-space: -moz-pre-wrap;
   white-space: pre-wrap;
   background: transparent;
   border: none;

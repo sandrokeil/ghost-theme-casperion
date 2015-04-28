@@ -1,3 +1,8 @@
+/*
+    IMPORTANT: When making any changes to the icon font, be sure to increment
+    the version number by 1 in the @font-face rule. `?v=1` becomes `?v=2`
+    This forces browsers to download the new font file.
+*/
 @font-face {
   font-family: 'casperion';
   src:url('../fonts/casperion.eot?30psb0');
@@ -38,7 +43,7 @@
 .icon-star:before {
   content: "\e60c";
 }
-.icon-googleplus:before {
+.icon-google-plus:before {
   content: "\e601";
 }
 .icon-facebook:before {

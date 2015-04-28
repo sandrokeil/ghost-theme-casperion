@@ -28,7 +28,7 @@
   border: #bfc8cd 1px solid;
   text-decoration: none;
   border-radius: 4px;
-  transition: border ease 0.3s;
+  transition: border 0.3s ease;
 }
 
 .older-posts {
@@ -77,7 +77,7 @@
 
 /* On page2+ make all the headers smaller */
 .archive-template .main-header {
-  max-height: 30%;
+  max-height: 30vh;
 }
 
 /* On page2+ show extra pagination controls at the top of post list */

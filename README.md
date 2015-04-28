@@ -14,19 +14,19 @@
 
 **Casperion** is a free Ghost theme powered by SASS. The theme is based upon original Ghost theme [Casper](https://github.com/TryGhost/Casper) with some minor modifications and extensions.
 
-## [Casperion Demo](http://blog.sandro-keil.de/)
+## [Casperion Demo](https://sandro-keil.de/blog/)
 
 Casperion is a lightweight and speed optimized theme for Ghost. Casperion theme gets Grade A for both PageSpeed and
-YSlow reported by [GTmetrix](http://gtmetrix.com/reports/blog.sandro-keil.de/saOUEB43).
+YSlow reported by [GTmetrix](http://gtmetrix.com).
 
-[![Grade A](docs/casperion_gtmetrix.jpg)](http://blog.sandro-keil.de/ "Blog by Sandro Keil")
+[![Grade A](docs/casperion_gtmetrix.jpg)](https://sandro-keil.de/blog/ "Blog by Sandro Keil")
 
 ## Full Features
 
 **Casperion** theme is packaged with full powerful features so you can get started building your blog easily.
 It's planned to update this theme consistently depending on Casper theme changes.
 
-### Full Ghost 0.5.6 support
+### Full Ghost 0.6 support
 Casperion supports latest Ghost version.
 
 ### Top pinned navigation bar and off-canvas menu
@@ -72,6 +72,7 @@ Don't make any changes in `assets` folder. Only use `src` folder and use `gulp w
 Please have a look at the following files to configure this theme to your needs.
 
 * `default.hbs`
+* `navigation.hbs`
 * files under `partials/all`
 
 ### SASS files
@@ -88,7 +89,7 @@ The original Casper theme CSS has split in several SASS files.
 
 ## Copyright & License
 
-Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
+Copyright (c) 2013-2015 Ghost Foundation - Released under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

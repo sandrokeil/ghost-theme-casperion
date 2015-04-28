@@ -20,8 +20,9 @@
   border: none;
 }
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to
-   imperfections with browser width % calculations and rounding */
+/* Stop elements, such as img wider than the post content, from
+  creating horizontal scroll - slight hack due to imperfections
+  with browser width % calculations and rounding */
 .post-template .content {
   overflow: hidden;
 }
@@ -38,13 +39,39 @@
   display: none;
 }
 
-/* Keep images centred and within the bounds of the post-width */
+/* Keep images centered, and allow images wider than the main text column to break out. */
 .post-content img {
   display: block;
-  max-width: 100%;
+  max-width: 126%;
   height: auto;
-  margin: 0 auto;
   padding: 0.6em 0;
+  /* Centers an image by (1) pushing its left edge to the
+     center of its container and (2) shifting the entire image
+     in the opposite direction by half its own width.
+     Works for images that are larger than their containers. */
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%); /* for Safari and iOS */
+  -ms-transform: translateX(-50%); /* for IE9 */
+  transform: translateX(-50%);
+}
+
+.footnotes {
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.6em;
+}
+
+.footnotes li {
+  margin: 0.6rem 0;
+}
+
+.footnotes p {
+  margin: 0;
+}
+
+.footnotes p a:last-child {
+  text-decoration: none;
 }
 
 /* Break out larger images to be wider than the main text column
@@ -125,45 +152,14 @@
   text-decoration: none;
 }
 
-.post-footer .share a:hover {
-  color: #50585D;
+.post-footer .share .icon-twitter:hover {
+  color: #55acee;
 }
-
-/* The subscribe icon on the footer */
-.subscribe {
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  margin-left: -15px;
-  border: #EBF2F6 1px solid;
-  text-align: center;
-  line-height: 2.4rem;
-  border-radius: 50px;
-  background: #FFF;
-  transition: box-shadow 0.5s;
+.post-footer .share .icon-facebook:hover {
+  color: #3b5998;
 }
-
-/* The RSS icon, inserted via icon font */
-.subscribe:before {
-  color: #D2DEE3;
-  font-size: 10px;
-  position: absolute;
-  top: 2px;
-  left: 9px;
-  font-weight: 700;
-  transition: color 0.5s ease;
-}
-
-/* Add a box shadow to on hover */
-.subscribe:hover {
-  box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
-  transition: box-shadow 0.25s;
-}
-
-.subscribe:hover:before {
-  color: #50585D;
+.post-footer .share .icon-google-plus:hover {
+  color: #dd4b39;
 }
 
 /* CSS tooltip saying "Subscribe!" - initially hidden */

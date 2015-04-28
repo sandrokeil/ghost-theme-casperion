@@ -97,7 +97,6 @@
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  fill: none;
 }
 
 /* Remove default list styles for menus */
@@ -112,7 +111,9 @@
 * 2. Prevent menu text from being accidentally highlighted
 */
 .nav-menu {
-  user-select: none; /* 2 */
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
 }
 
 /* Give menu items a top border */
