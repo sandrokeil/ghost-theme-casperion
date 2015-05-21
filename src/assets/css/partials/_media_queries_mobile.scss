@@ -35,7 +35,7 @@
   .menu-button {
     padding: 0 5px;
     border-radius: 0;
-    border-color: transparent;
+    border-width: 0;
     color: #2e2e2e;
     background: transparent;
   }
@@ -68,16 +68,11 @@
 
   .nav-title {
     top: 25px;
-
   }
 
   .nav-close {
     position: absolute;
     top: 18px;
-  }
-
-  .nav ul {
-    padding: 60px 9% 5%;
   }
 
   .inner,
@@ -251,7 +246,6 @@
 
   .read-next {
     margin-top: 2rem;
-    margin-bottom: -37px;
   }
 
   .read-next .post {
@@ -266,5 +260,10 @@
 
   .nav .list-inline > li {
     margin: 0.25em 0em;
+  }
+
+  table {
+    display:block;
+    overflow-x: auto;
   }
 }
