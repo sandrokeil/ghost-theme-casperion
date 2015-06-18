@@ -1,5 +1,8 @@
 # Casperion CHANGELOG
 
+## 1.1.2 (2015-06-18)
+- [#6](https://github.com/sandrokeil/ghost-theme-casperion/issues/6) fixed blog cover was not displayed
+
 ## 1.1.1 (2015-05-21)
 - Fixed menu mobile padding issue
 - Fixed footer and read next mobile margin issues
