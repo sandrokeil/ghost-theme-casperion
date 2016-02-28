@@ -26,7 +26,7 @@ YSlow reported by [GTmetrix](http://gtmetrix.com).
 **Casperion** theme is packaged with full powerful features so you can get started building your blog easily.
 It's planned to update this theme consistently depending on Casper theme changes.
 
-### Full Ghost 0.6 support
+### Full Ghost 0.7 support
 Casperion supports latest Ghost version.
 
 ### Top pinned navigation bar and off-canvas menu
@@ -77,6 +77,15 @@ Please have a look at the following files to configure this theme to your needs.
 
 ### SASS files
 The original Casper theme CSS has split in several SASS files.
+
+## Docker
+It's very easy to build the assets with [Docker](https://www.docker.com/). Make sure you run the Docker container from
+the root dir of this source.
+
+```bash
+$ docker run --rm -it --volume $(pwd):/app neo9polska/nodejs-bower-gulp npm install
+$ docker run --rm -it --volume $(pwd):/app neo9polska/nodejs-bower-gulp gulp
+```
 
 ### TODO
 :white_medium_square: Use more configuration variables
