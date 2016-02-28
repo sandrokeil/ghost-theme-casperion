@@ -1,5 +1,8 @@
 # Casperion CHANGELOG
 
+## 1.2.0 (2016-02-28)
+- update to latest Ghost version 0.7.8
+
 ## 1.1.2 (2015-06-18)
 - [#6](https://github.com/sandrokeil/ghost-theme-casperion/issues/6) fixed blog cover was not displayed
 
