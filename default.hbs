@@ -1,40 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
-    <base href="{{@blog.url}}">
-    {{! Document Settings }}
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    {{! Page Meta }}
+
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Base Meta --}}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}"/>
-    <meta name="HandheldFriendly" content="True"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    {{> all/meta this}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-    <link rel="icon" href="{{asset "favicon.ico"}}" type="image/x-icon">
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/main.min.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:700,400" />
-    <link rel="apple-touch-icon" href="{{asset "img/apple-touch-icon.png"}}" />
-    {{! Ghost outputs important style and meta data with this tag }}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "assets/css/casperion.min.css"}}" />
+
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
+
 </head>
 <body class="{{body_class}}">
-<script type="text/javascript">
-    /*** CONFIGURATION VARIABLES: EDIT THE VALUES BELOW FOR THEME CONFIGURATION ***/
-    var casperionConfig = {
-        google_analytics_tracking_id: "",
-        disqus_shortname: ""
-    };
-</script>
-{{navigation}}
-{{! Everything else gets inserted here }}
-{{{body}}}
-{{> all/footer this}}
-{{! Ghost outputs important scripts and data with this tag }}
-{{! The main JavaScript file for Casperion }}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="{{asset "js/casperion.min.js"}}"></script>
+
+    <div class="site-wrapper">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+
+        {{!-- The footer at the very bottom of the screen --}}
+        <footer class="site-footer outer">
+            <div class="site-footer-content inner">
+                <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+                <nav class="site-footer-nav">
+                    <a href="{{@blog.url}}">Latest Posts</a>
+                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
+                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                    <a href="https://sandro-keil.de/blog/2014/12/10/casperion-ghost-theme/" target="_blank" title="Casperion Ghost Theme" rel="noopener">Casperion Ghost Theme</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+
+    {{!-- The big email subscribe modal content --}}
+    {{#if @labs.subscribers}}
+    <div id="subscribe" class="subscribe-overlay">
+        <a class="subscribe-overlay-close" href="#"></a>
+        <div class="subscribe-overlay-content">
+            {{#if @blog.logo}}
+                <img class="subscribe-overlay-logo" src="{{@blog.logo}}" alt="{{@blog.title}}" />
+            {{/if}}
+            <h1 class="subscribe-overlay-title">Subscribe to {{@blog.title}}</h1>
+            <p class="subscribe-overlay-description">Stay up to date! Get all the latest &amp; greatest posts delivered straight to your inbox</p>
+            {{subscribe_form placeholder="youremail@example.com"}}
+        </div>
+    </div>
+    {{/if}}
+
+    {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
+    <script type="text/javascript" src="{{asset "assets/js/jquery-3.2.1.min.js"}}"></script>
+
+    {{#if pagination.pages}}
+    <script>
+        // maxPages is a global variable that is needed to determine
+        // if we need to load more pages for the infinitescroll, or if
+        // we reached the last page already.
+        var maxPages = parseInt('{{pagination.pages}}');
+    </script>
+    {{/if}}
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+
+    <script>
+        (function ($) {
+            'use strict';
+
+            $( document ).ready( function () {
+                if ($("pre code")[0]) {
+                    $.getScript("{{asset "assets/js/highlight.min.js"}}", function() {
+                        $("pre code").each(function (i, e) {
+                            hljs.highlightBlock(e)
+                        });
+                    });
+                }
+            } );
+        }( jQuery ));
+    </script>
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+
+    <div id="search-overlay" class="search-overlay block">
+        <div class="centered">
+            <div id='search-box' class="search-box">
+                <a href="#" id="close-btn" class="close-btn">{{> "icons/close"}}</a>
+                <form id="search-form" class="search-form" onsubmit="return false;">
+                    <input id="search-field" class="search-field" name="q" placeholder="Search" type="text"/>
+                </form>
+            </div>
+            <section class="search-results" id="results"></section>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{asset "assets/js/casperion.min.js"}}"></script>
 </body>
 </html>
