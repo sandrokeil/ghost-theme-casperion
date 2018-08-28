@@ -1,69 +1,97 @@
-// Load Gulp Plugins
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    imagemin = require('gulp-imagemin'),
-    rename = require('gulp-rename'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache');
+var gulp = require('gulp');
 
-// Styles
-gulp.task('styles', function() {
-    return gulp.src('src/assets/css/main.scss')
-        //.pipe(sass({ style: 'expanded' }))
-        //.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        //.pipe(gulp.dest('assets/css'))
-        //.pipe(rename({ suffix: '.min' }))
-        //.pipe(minifycss())
+// gulp plugins and utils
+var gutil = require('gulp-util');
+var livereload = require('gulp-livereload');
+var postcss = require('gulp-postcss');
+var sourcemaps = require('gulp-sourcemaps');
+var zip = require('gulp-zip');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 
-        .pipe(sass({style: 'expanded', quiet: true, cacheLocation: '.sass-cache'}))
-        .pipe(gulp.dest('assets/css'))
-        .pipe(minifycss({keepSpecialComments: 0}))
+// postcss plugins
+var autoprefixer = require('autoprefixer');
+var colorFunction = require('postcss-color-function');
+var cssnano = require('cssnano');
+var customProperties = require('postcss-custom-properties');
+var easyimport = require('postcss-easy-import');
+
+var swallowError = function swallowError(error) {
+    gutil.log(error.toString());
+    gutil.beep();
+    this.emit('end');
+};
+
+var nodemonServerInit = function () {
+    livereload.listen(1234);
+};
+
+gulp.task('build', ['css', 'scripts'], function (/* cb */) {
+    return nodemonServerInit();
+});
+
+gulp.task('css', function () {
+    var processors = [
+        easyimport,
+        customProperties,
+        colorFunction(),
+        autoprefixer({browsers: ['last 2 versions']}),
+        cssnano()
+    ];
+
+    return gulp.src(
+        [
+            'assets/css/screen.css',
+            'assets/css/search.css',
+            'assets/css/darcula.css',
+        ]
+    )
+        .on('error', swallowError)
+        .pipe(concat('casperion.css'))
+        // .pipe(sourcemaps.init())
+        .pipe(postcss(processors))
         .pipe(rename({suffix: '.min'}))
+        // .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(livereload());
+});
 
-        .pipe(gulp.dest('assets/css'))
-        .pipe(notify({ message: 'Styles task complete' }));
+gulp.task('watch', function () {
+    gulp.watch('assets/css/**', ['css']);
+});
+
+gulp.task('zip', ['css', 'scripts'], function () {
+    var targetDir = 'dist/';
+    var themeName = require('./package.json').name;
+    var filename = themeName + '.zip';
+
+    return gulp.src([
+        '**',
+        '!node_modules', '!node_modules/**',
+        '!dist', '!dist/**'
+    ])
+        .pipe(zip(filename))
+        .pipe(gulp.dest(targetDir));
+});
+
+gulp.task('default', ['build'], function () {
+    gulp.start('watch');
 });
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'src/assets/js/**/*.js'])
-        //.pipe(jshint('.jshintrc'))
-        //.pipe(jshint.reporter('default'))
+        'assets/js/infinitescroll.js',
+        'assets/js/jquery.fitvids.js',
+        'assets/js/search.js',
+        'assets/js/jquery.ghosthunter.js',
+        ]
+    )
+    //.pipe(jshint('.jshintrc'))
+    //.pipe(jshint.reporter('default'))
         .pipe(concat('casperion.js'))
         .pipe(gulp.dest('assets/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest('assets/js'))
-        .pipe(notify({ message: 'Scripts task complete' }));
-});
-
-// Images
-gulp.task('images', function() {
-    return gulp.src('src/assets/images/**/*')
-        .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-        .pipe(gulp.dest('assets/images'))
-        .pipe(notify({ message: 'Images task complete' }));
-});
-
-// Default task
-gulp.task('default', function() {
-    gulp.start('styles', 'scripts');
-});
-
-// Watch
-gulp.task('watch', function() {
-
-    // Watch .scss files
-    gulp.watch('src/assets/css/**/*.scss', ['styles']);
-
-    // Watch .js files
-    gulp.watch('src/assets/js/**/*.js', ['scripts']);
-
-    // Watch image files
-    //gulp.watch('src/assets/images/**/*', ['images']);
+        .pipe(gulp.dest('assets/js'));
 });
